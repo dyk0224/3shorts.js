@@ -11,5 +11,6 @@ function solution(ingredient) {
         answer++;
         stack.splice(-4);
     })
-	return answer;
+	
+    return answer;
 }
