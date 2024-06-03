@@ -43,3 +43,18 @@ function solution(price, money, count) {
     answer = totalPrice-money
     return answer;
 }
+
+-----------------------------------------
+    //아영//
+    
+    function solution(price, money, count) {
+    let cost = 0;
+    for (let i = 1; i <= count; i++) {
+        cost += i * price;
+    }
+    let answer = money - cost;
+    if (answer >= 0) {
+        return 0;
+    }
+    return -answer;
+}
