@@ -13,3 +13,18 @@ function solution(array, commands) {
   });
   return answer;
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//e[0] - 1과 같은 처음봤을 때 알아보기 힘든 변수들이 있다.
+
+function solution(array, commands) {
+  var answer = [];
+  
+  commands.forEach((e)=>{
+      const numbers = array.slice(e[0] - 1, e[1]).sort((a, b)=> a - b);
+      answer.push(numbers[e[2] - 1]);
+  })
+  
+  return answer;
+}

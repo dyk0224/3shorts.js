@@ -11,3 +11,21 @@ function solution(array, commands) {
   const answers = commands.map((command) => getKNumber(array, command));
   return answers;
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//목적을 알기 힘들었던 변수에 이름을 달아두었다.
+
+function solution(array, commands) {
+  var answer = [];
+  
+  commands.forEach((e)=>{
+      const first = e[0] - 1;
+      const last = e[1];
+      const nth = e[2] - 1;
+      const numbers = array.slice(first, last).sort((a, b)=> a - b);
+      answer.push(numbers[nth]);
+  })
+  
+  return answer;
+}
