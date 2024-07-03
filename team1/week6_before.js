@@ -40,3 +40,26 @@ function convertToMinute(time) {
     
     return minute;
 }
+
+-------------------------------------------
+    hanju
+
+function solution(book_time) {
+    let reservation = book_time.map(bookTime => {
+        return bookTime.map((time) => {
+            let [hours, minutes] = time.split(":");
+            return hours * 60 + minutes * 1;
+        });
+    });
+    reservation.sort((a, b) => a[0] - b[0]);
+    let rooms = [];
+    for (let [start, end] of reservation) {
+        rooms.sort((a, b) => a - b);
+        end += 10;
+        if (rooms.length > 0 && rooms[0] <= start) {
+            rooms.shift();
+        }
+        rooms.push(end);
+    }
+    return rooms.length;
+}
