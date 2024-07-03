@@ -23,6 +23,8 @@ function solution(book_time) {
         return a[1] - b[1];
     });
     
+    console.log(timeLine)
+    
     timeLine.map((time) => {
         const countChange = time[0] === 'open' ? 1 : -1;
         counting += countChange;
