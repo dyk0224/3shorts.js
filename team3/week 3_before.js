@@ -42,3 +42,28 @@ n은 1 이상, 25이하인 자연수입니다.
     } 
     return answer;
 }
+
+
+//아영
+
+function solution(s, n) {
+    const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+    const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let answer = '';
+
+    for (let i = 0; i < s.length; i++) {
+        let char = s[i];
+
+        if (char === ' ') {
+            answer += char;
+        } else {
+            let alphabet = lowerCase.includes(char) ? lowerCase : upperCase;
+            let index = alphabet.indexOf(char);
+            let newIndex = (index + n) % 26;
+            answer += alphabet[newIndex];
+        }
+    }
+
+    return answer;
+}
+
