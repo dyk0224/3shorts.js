@@ -1,17 +1,14 @@
 function solution(n) {
-    var answer = 0;
-    if(n === 1) {
-        return 1;
-    } else if(n === 2) {
-        return 2;
+    if (n === 1) return 1;
+    
+    // let prev;
+    // let prevprev;
+    
+    let pibonachi = [1, 1];
+    let answer;
+    for (let i=2; i<=n; i++) {
+        const length = pibonachi.length;
+        pibonachi.push((pibonachi[length-1] + pibonachi[length-2]) % 1234567);
     }
-    let a = 1;
-    let b = 2;
-    for (i = 3; i <= n; i++) {
-        let current = a+b
-        a = b;
-        b = current% 1234567;
-    }
-    answer = b 
-    return answer;
+    return pibonachi[pibonachi.length-1];
 }
