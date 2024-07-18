@@ -1,0 +1,15 @@
+function solution(n) {
+    let answer = 0;
+    for (let i = 1; i * (i - 1) / 2 < n; i++) {
+        if ((n - i * (i - 1) / 2) % i === 0) {
+            answer++;
+        }
+    }
+
+    return answer;
+}
+
+// 연속된 자연수의 합 공식 : a = 시작 숫자, i = 연속되는 숫자의 개수, n = 주어진 수.
+   - n = a + (a + 1) + (a + 2) + ... +(a + i − 1)
+    정리하면, n = a * i + (i(i - 1) / 2)
+              
